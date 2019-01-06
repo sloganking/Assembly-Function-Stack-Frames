@@ -19,7 +19,7 @@ func:
 	MOV A, [A]
 	PUSH A
 
-	;call another function
+	;call another function and pass 5 as an argument
 	PUSH 5
 	CALL func2
 
@@ -71,3 +71,4 @@ main:
 	POP A	;put what was returned in a register
 
 	HLT
+	
