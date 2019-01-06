@@ -4,26 +4,28 @@
 	MOV B, SP	; initialize base pointer
 	JMP main
 
-
 func:
-	PUSH B		; Push BP and move SP into BP
+	; Push BP and move SP into BP
+	PUSH B
 	MOV B, SP
 
-	PUSH 1		; declare function variables
+	; declare function variables
+	PUSH 1
 	PUSH 2
 	
+	; Put argument in stack frame
+	MOV A, B	
+	ADD A, 3
+	MOV A, [A]
+	PUSH A
 
-	MOV SP, B	; leave / 
+	; leave
+	MOV SP, B 
 	POP B
+
 	RET
 
 main:
-
-
-	MOV A, 1
-	MOV D, 2
-	MOV C, 3
-
 	PUSH 10
 	CALL func
 
