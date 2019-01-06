@@ -5,7 +5,7 @@
 	JMP main
 
 func:
-	; Push BP and move SP into BP
+	; Push BP to stack and then create new Stack frame
 	PUSH B
 	MOV B, SP
 
